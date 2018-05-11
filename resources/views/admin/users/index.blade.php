@@ -20,7 +20,8 @@
                 <li class="dropdown">
                   <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
                      role="button" aria-haspopup="true" aria-expanded="false">
-                    <i class="material-icons">more_vert</i>
+                    <i class="material-icons">person_add</i>
+
                   </a>
                   <ul class="dropdown-menu pull-right">
                     <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a>
@@ -191,27 +192,27 @@
 
 @endsection
 @section('js')
-  <script src="https://cdn.bootcss.com/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.bootcss.com/jszip/3.1.5/jszip.min.js"></script>
-  <script src="{{asset('/js/admin/plugins/jquery-datatables/buttons.html5.min.js')}}"></script>
-  <script src="{{asset('/js/admin/plugins/jquery-datatables/buttons.print.min.js')}}"></script>
-  <script src="{{asset('/js/admin/plugins/jquery-datatables/dataTables.buttons.min.js')}}"></script>
-  <script src="{{asset('/js/admin/plugins/jquery-datatables/pdfmake.min.js')}}"></script>
+  {{--<script src="https://cdn.bootcss.com/datatables/1.10.12/js/jquery.dataTables.min.js"></script>--}}
+  {{--<script src="https://cdn.bootcss.com/jszip/3.1.5/jszip.min.js"></script>--}}
+  {{--<script src="{{asset('/js/admin/plugins/jquery-datatables/buttons.html5.min.js')}}"></script>--}}
+  {{--<script src="{{asset('/js/admin/plugins/jquery-datatables/buttons.print.min.js')}}"></script>--}}
+  {{--<script src="{{asset('/js/admin/plugins/jquery-datatables/dataTables.buttons.min.js')}}"></script>--}}
+  {{--<script src="{{asset('/js/admin/plugins/jquery-datatables/pdfmake.min.js')}}"></script>--}}
 
-  <script>
-      $(function () {
-          $('.js-basic-example').DataTable({
-              responsive: true
-          });
+  {{--<script>--}}
+      {{--$(function () {--}}
+          {{--$('.js-basic-example').DataTable({--}}
+              {{--responsive: true--}}
+          {{--});--}}
 
-          //Exportable table
-          $('.js-exportable').DataTable({
-              dom: 'Bfrtip',
-              responsive: true,
-              buttons: [
-                  'excel', 'print','pdf'
-              ]
-          });
-      });
-  </script>
+          {{--//Exportable table--}}
+          {{--$('.js-exportable').DataTable({--}}
+              {{--dom: 'Bfrtip',--}}
+              {{--responsive: true,--}}
+              {{--buttons: [--}}
+                  {{--'excel', 'print','pdf'--}}
+              {{--]--}}
+          {{--});--}}
+      {{--});--}}
+  {{--</script>--}}
 @endsection

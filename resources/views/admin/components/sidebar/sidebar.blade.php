@@ -7,8 +7,7 @@
         <img src="{{asset('/images/user.png')}}" width="48" height="48" alt="User"/>
       </div>
       <div class="info-container">
-        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John
-          Doe
+        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}
         </div>
         <div class="email">john.doe@example.com</div>
         <div class="btn-group user-helper-dropdown">
