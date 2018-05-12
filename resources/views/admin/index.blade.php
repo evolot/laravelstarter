@@ -1221,40 +1221,6 @@
   </div>
 </section>
 
-<!-- Jquery Core Js -->
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
-{{--<script src="plugins/jquery/jquery.min.js"></script>--}}
 
-<!-- Bootstrap Core Js -->
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-{{--<script src="plugins/bootstrap/js/bootstrap.js"></script>--}}
-
-<!-- Select Plugin Js -->
-{{--<script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>--}}
-
-<!-- Slimscroll Plugin Js -->
-<script src="https://cdn.bootcss.com/jQuery-slimScroll/1.3.0/jquery.slimscroll.min.js"></script>
-{{--<script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>--}}
-
-<!-- Waves Effect Plugin Js -->
-<script src="{{url('/js/admin/plugins/waves.min.js')}}"></script>
-
-<!-- Jquery CountTo Plugin Js -->
-<script src="{{url('/js/admin/plugins/jquery.countTo.js')}}"></script>
-
-{{--<!-- Morris Plugin Js -->--}}
-{{--<script src="plugins/raphael/raphael.min.js"></script>--}}
-{{--<script src="plugins/morrisjs/morris.js"></script>--}}
-
-
-<!-- Sparkline Chart Plugin Js -->
-{{--<script src="plugins/jquery-sparkline/jquery.sparkline.js"></script>--}}
-
-<!-- Custom Js -->
-<script src="{{asset('/js/admin/admin.js')}}"></script>
-<script src="{{asset('/js/admin/pages/index.js')}}"></script>
-
-<!-- Demo Js -->
-<script src="{{asset('js/admin/demo.js')}}"></script>
 
 @endsection

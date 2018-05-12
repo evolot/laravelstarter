@@ -30,10 +30,10 @@ class LoginController extends Controller {
   public function redirectTO()
   {
     if ( Auth::user()->hasRole('admin') ) {
-      return redirect()->to('/admin');
+      return '/admin';
     }
 
-    return redirect()->to('/');
+    return '/home';
   }
 
   /**
