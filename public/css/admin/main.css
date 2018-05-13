@@ -2243,81 +2243,7 @@
     top: 15px;
     right: 5px; }
 
-.demo-choose-skin {
-    list-style: none;
-    padding-left: 0;
-    overflow-y: hidden; }
-.demo-choose-skin li {
-    border-bottom: 1px solid #eee;
-    padding: 10px 10px 4px 10px;
-    position: relative;
-    cursor: pointer; }
-.demo-choose-skin li.active {
-    background-color: #eee; }
-.demo-choose-skin li.active:after {
-    font-family: 'Material Icons';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    content: '\E876';
-    font-size: 18px;
-    font-weight: bold; }
-.demo-choose-skin li:hover {
-    background-color: #eee; }
-.demo-choose-skin li div {
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    border-radius: 3px; }
-.demo-choose-skin li span {
-    position: relative;
-    bottom: 7px;
-    left: 5px; }
-.demo-choose-skin .red {
-    background-color: #F44336; }
-.demo-choose-skin .pink {
-    background-color: #E91E63; }
-.demo-choose-skin .purple {
-    background-color: #9C27B0; }
-.demo-choose-skin .deep-purple {
-    background-color: #673AB7; }
-.demo-choose-skin .indigo {
-    background-color: #3F51B5; }
-.demo-choose-skin .blue {
-    background-color: #2196F3; }
-.demo-choose-skin .light-blue {
-    background-color: #03A9F4; }
-.demo-choose-skin .cyan {
-    background-color: #00BCD4; }
-.demo-choose-skin .teal {
-    background-color: #009688; }
-.demo-choose-skin .green {
-    background-color: #4CAF50; }
-.demo-choose-skin .light-green {
-    background-color: #8BC34A; }
-.demo-choose-skin .lime {
-    background-color: #CDDC39; }
-.demo-choose-skin .yellow {
-    background-color: #ffe821; }
-.demo-choose-skin .amber {
-    background-color: #FFC107; }
-.demo-choose-skin .orange {
-    background-color: #FF9800; }
-.demo-choose-skin .deep-orange {
-    background-color: #FF5722; }
-.demo-choose-skin .brown {
-    background-color: #795548; }
-.demo-choose-skin .grey {
-    background-color: #9E9E9E; }
-.demo-choose-skin .blue-grey {
-    background-color: #607D8B; }
-.demo-choose-skin .black {
-    background-color: #000000; }
-.demo-choose-skin .white {
-    background-color: #ffffff; }
+
 
 /* Materialize Css | Taken from www.materializecss.com */
 /* Media ======================================= */
@@ -7665,10 +7591,10 @@ fieldset[disabled] .form-control {
     padding-left: 95px; }
 
 .right-sidebar {
-    width: 280px;
+    width: 350px;
     height: calc(100vh - 70px);
     position: fixed;
-    right: -300px;
+    right: -350px;
     top: 70px;
     background: #fdfdfd;
     z-index: 11 !important;
@@ -7693,9 +7619,11 @@ fieldset[disabled] .form-control {
 .right-sidebar .nav-tabs li > a {
     margin-right: 0; }
 .right-sidebar .nav-tabs li:first-child {
-    width: 45%; }
+    width: 25%;
+}
 .right-sidebar .nav-tabs li:last-child {
-    width: 55%; }
+    /*width: 55%; */
+}
 
 /* Bootstrap Notify ============================ */
 .bootstrap-notify-container {
@@ -8040,3 +7968,342 @@ html.ie11 .dropdown-menu ul.menu li a {
 html.ie11 .bs-searchbox .form-control {
     width: 90%; }
 
+.right-sidebar li {
+    list-style: none;
+}
+
+.right-sidebar .userlist li .avatar {
+
+}
+
+.avatar image {
+    width: 44px;
+    height: 44px;
+
+}
+
+/*.right-sidebar .userlist li span {*/
+/*position: relative;*/
+/*top: -10px;*/
+/*left: 20px;*/
+/*}*/
+
+/*聊天*/
+
+.qqBox {
+    width: 798px;
+    height: 600px;
+    position: fixed;
+    border: 1px solid #ccc;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    z-index: 5;
+}
+
+.BoxHead {
+    width: 100%;
+    height: 52px;
+    background: url('https://ww2.sinaimg.cn/large/006tNc79ly1fra1f9cwmjj30m601e3y9.jpg') no-repeat;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+}
+
+.headImg {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.headImg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.internetName {
+    width: auto;
+    height: 52px;
+    line-height: 52px;
+    color: white;
+}
+
+.context {
+    -webkit-box-flex: 1;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+}
+
+.conLeft {
+    width: 200px;
+    height: 548px;
+    overflow: auto;
+    background: #fafafa;
+}
+
+.conLeft::-webkit-scrollbar {
+    width: 0;
+}
+
+.conLeft ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.conLeft li {
+    width: 100%;
+    height: 62px;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+}
+
+.conLeft li .liLeft {
+    width: 30%;
+    height: 100%;
+}
+
+.liLeft img {
+    margin: 10px;
+}
+
+.liRight span {
+    display: block;
+    font-size: 16px;
+    height: 31px;
+    line-height: 31px;
+}
+
+.liRight span:last-child {
+    font-size: 14px;
+    color: #767676;
+    line-height: 15px;
+    overflow: hidden;
+}
+
+.conRight {
+    -webkit-box-flex: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.Righthead {
+    width: 100%;
+    height: 42px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fafafa;
+}
+
+.headName {
+    width: auto;
+    height: 100%;
+    line-height: 42px;
+    margin-left: 20px;
+    font-family: "微软雅黑";
+    font-size: 18px;
+    float: left;
+}
+
+.headConfig {
+    width: 20%;
+    float: right;
+    height: 100%;
+
+}
+
+.headConfig ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+}
+
+.headConfig li {
+    margin: 10px 5px;
+}
+
+.RightCont {
+    -webkit-box-flex: 1;
+    overflow-y: scroll;
+    background-color: #fafafa;
+}
+
+.RightCont::-webkit-scrollbar {
+    width: 15px;
+}
+
+.RightCont ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.RightCont li {
+    width: 100%;
+    height: 50px;
+    /*display: -webkit-box;
+    -webkit-box-orient: horizontal;*/
+    margin-top: 10px;
+}
+
+.nesHead {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-left: 15px;
+    float: right;
+}
+
+.nesHead img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.news {
+    width: auto;
+    height: auto;
+    background: #2683f5;
+    padding: 10px 20px;
+    margin: 4px;
+    line-height: 20px;
+    font-size: 14px;
+    border-radius: 10px;
+    margin-left: 30px;
+    position: relative;
+    float: right;
+    color: white;
+}
+
+.news .jiao {
+    position: absolute;
+    left: -8px;
+    top: 10px;
+}
+
+.news .Expr {
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+}
+
+.answerHead {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-left: 15px;
+    float: left;
+}
+
+.answerHead img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.answers {
+    width: auto;
+    height: 30px;
+    background: #eeeeee;
+    padding: 5px 20px;
+    margin: 4px;
+    line-height: 30px;
+    font-size: 14px;
+    border-radius: 10px;
+    margin-left: 10px;
+    position: relative;
+    float: left;
+}
+
+.answers .jiao {
+    position: absolute;
+    right: -8px;
+    top: 10px;
+}
+
+.RightFoot {
+    width: 100%;
+    height: 118px;
+    border-top: 1px solid #ccc;
+    position: relative;
+}
+
+.emjon {
+    width: 360px;
+    height: 200px;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 0;
+    top: -190px;
+    display: none;
+    background: #fff;
+}
+
+.emjon ul {
+    list-style: none;
+    margin: 0;
+}
+
+.emjon ul li {
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+    float: left;
+
+}
+
+.emjon ul li:hover {
+    box-shadow: 5px 5px 5px #888888;
+    transform: scale(1.2);
+
+}
+
+.emjon ul li img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.footTop {
+    width: 100%;
+    height: auto;
+    background-color: #fafafa;
+}
+
+.footTop ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+}
+
+.footTop li {
+    margin: 5px 10px;
+}
+
+.sendBtn {
+    width: 68px;
+    height: 25px;
+    background: #0188fb;
+    border: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+}
+
+.bg {
+    background: #ebebec;
+}
+
+.right-sidebar .conLeft {
+    width: 350px;
+    height: 100%;
+}

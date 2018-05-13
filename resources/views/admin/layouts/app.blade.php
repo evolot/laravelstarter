@@ -11,16 +11,20 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext"
-        rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
-        type="text/css">
+  {{--<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext"--}}
+  {{--rel="stylesheet" type="text/css">--}}
+  {{--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"--}}
+  {{--type="text/css">--}}
+  <link href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css"
+        rel="stylesheet">
 
   <!-- Bootstrap Core Css -->
   {{--<link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">--}}
   <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
   <!-- Waves Effect Css -->
   <link href="{{asset('/css/admin/waves.css')}}" rel="stylesheet"/>
+
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- Animation Css -->
   <link href="{{asset('/css/admin/animate.css')}}" rel="stylesheet"/>

@@ -15,9 +15,9 @@ class RoleController extends Controller
      */
     public function index()
     {
-      $roles = Role::paginate(20);
+      $roles = Role::withCount('users', 'permissions')->paginate(20);
 
-      return view('admin.permissions.index', compact('roles'));
+      return view('admin.roles.index', compact('roles'));
 
     }
 
@@ -28,7 +28,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+      return view('admin.roles.create_edit');
     }
 
     /**
@@ -39,7 +39,10 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = $request->except('csrf_token');
+      $res = Role::create($data);
+
+      return redirect('admin/roles');
     }
 
     /**
@@ -59,9 +62,10 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+  public function edit(Role $role)
     {
-        //
+
+      return view('admin.roles.create_edit', compact('role'));
     }
 
     /**
@@ -73,7 +77,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      dd($request);
     }
 
     /**

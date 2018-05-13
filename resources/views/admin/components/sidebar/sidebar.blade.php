@@ -9,7 +9,7 @@
       <div class="info-container">
         <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}
         </div>
-        <div class="email">john.doe@example.com</div>
+        <div class="email">{{Auth::user()->roles()->first()->display_name}}</div>
         <div class="btn-group user-helper-dropdown">
           <i class="material-icons" data-toggle="dropdown" aria-haspopup="true"
              aria-expanded="true">keyboard_arrow_down</i>
@@ -398,93 +398,84 @@
   <!-- Right Sidebar -->
   <aside id="rightsidebar" class="right-sidebar">
     <ul class="nav nav-tabs tab-nav-right" role="tablist">
-      <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
-      <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
+      <li role="presentation" class="active"><a href="#talk" data-toggle="tab">聊天</a></li>
+      <li role="presentation"><a href="#contacts" data-toggle="tab">联系人</a></li>
+      <li role="presentation"><a href="#settings" data-toggle="tab">设置</a></li>
     </ul>
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
-        <ul class="demo-choose-skin">
-          <li data-theme="red" class="active">
-            <div class="red"></div>
-            <span>Red</span>
+      <div role="tabpanel" class="tab-pane fade in active in active" id="talk">
+        <ul class="userlist">
+          <li class="active">
+            <div class="avatar" style="float:left;">
+              <image src="{{asset('/images/user.png')}}"></image>
+            </div>
+            <div style="float:left;">
+              <span>Red</span>
+              <div class="bio">there is a part inside that you cant reach</div>
+            </div>
+            <div style="clear: both;"></div>
+
           </li>
-          <li data-theme="pink">
-            <div class="pink"></div>
-            <span>Pink</span>
+          <li class="active">
+            <div class="avatar" style="float:left;">
+              <image src="{{asset('/images/user.png')}}"></image>
+            </div>
+            <div style="float:left;">
+              <span>Red</span>
+              <div class="bio">there is a part inside that you cant reach</div>
+            </div>
+            <div style="clear: both;"></div>
+
           </li>
-          <li data-theme="purple">
-            <div class="purple"></div>
-            <span>Purple</span>
+          <li class="active">
+            <div class="avatar" style="float:left;">
+              <image src="{{asset('/images/user.png')}}"></image>
+            </div>
+            <div style="float:left;">
+              <span>Red</span>
+              <div class="bio">there is a part inside that you cant reach</div>
+            </div>
+            <div style="clear: both;"></div>
+
           </li>
-          <li data-theme="deep-purple">
-            <div class="deep-purple"></div>
-            <span>Deep Purple</span>
+          <li class="active">
+            <div class="avatar" style="float:left;">
+              <image src="{{asset('/images/user.png')}}"></image>
+            </div>
+            <div style="float:left;">
+              <span>Red</span>
+              <div class="bio">there is a part inside that you cant reach</div>
+            </div>
+            <div style="clear: both;"></div>
+
           </li>
-          <li data-theme="indigo">
-            <div class="indigo"></div>
-            <span>Indigo</span>
+          <li class="active">
+            <div class="avatar" style="float:left;">
+              <image src="{{asset('/images/user.png')}}"></image>
+            </div>
+            <div style="float:left;">
+              <span>Red</span>
+              <div class="bio">there is a part inside that you cant reach</div>
+            </div>
+            <div style="clear: both;"></div>
+
           </li>
-          <li data-theme="blue">
-            <div class="blue"></div>
-            <span>Blue</span>
-          </li>
-          <li data-theme="light-blue">
-            <div class="light-blue"></div>
-            <span>Light Blue</span>
-          </li>
-          <li data-theme="cyan">
-            <div class="cyan"></div>
-            <span>Cyan</span>
-          </li>
-          <li data-theme="teal">
-            <div class="teal"></div>
-            <span>Teal</span>
-          </li>
-          <li data-theme="green">
-            <div class="green"></div>
-            <span>Green</span>
-          </li>
-          <li data-theme="light-green">
-            <div class="light-green"></div>
-            <span>Light Green</span>
-          </li>
-          <li data-theme="lime">
-            <div class="lime"></div>
-            <span>Lime</span>
-          </li>
-          <li data-theme="yellow">
-            <div class="yellow"></div>
-            <span>Yellow</span>
-          </li>
-          <li data-theme="amber">
-            <div class="amber"></div>
-            <span>Amber</span>
-          </li>
-          <li data-theme="orange">
-            <div class="orange"></div>
-            <span>Orange</span>
-          </li>
-          <li data-theme="deep-orange">
-            <div class="deep-orange"></div>
-            <span>Deep Orange</span>
-          </li>
-          <li data-theme="brown">
-            <div class="brown"></div>
-            <span>Brown</span>
-          </li>
-          <li data-theme="grey">
-            <div class="grey"></div>
-            <span>Grey</span>
-          </li>
-          <li data-theme="blue-grey">
-            <div class="blue-grey"></div>
-            <span>Blue Grey</span>
-          </li>
-          <li data-theme="black">
-            <div class="black"></div>
-            <span>Black</span>
-          </li>
+
         </ul>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="contacts">
+        <div class="conLeft">
+          <ul>
+            <li>
+              <div class="liLeft"><img src="{{asset('/images/user.png')}}"></div>
+              <div class="liRight">
+                <span class="intername">前端交流群</span>
+                <span class="infor">厉害了</span>
+              </div>
+            </li>
+
+          </ul>
+        </div>
       </div>
       <div role="tabpanel" class="tab-pane fade" id="settings">
         <div class="demo-settings">
@@ -538,4 +529,99 @@
     </div>
   </aside>
   <!-- #END# Right Sidebar -->
+  <div class="qqBox" style="display: none">
+    <div class="BoxHead">
+      <div class="headImg">
+        <img id="headImg" src="{{Auth::user()->avatar}}" style="height: 40px;width: 40px;"/>
+      </div>
+      <div class="internetName">{{Auth::user()->nickname}}</div>
+    </div>
+    <div class="context">
+      <div class="conLeft">
+        <ul class="contact-list">
+          @foreach($users as $user)
+            <li>
+              <div class="liLeft"><img src="{{$user->avatar}}" style="height: 40px;width: 40px;"/>
+              </div>
+              <div class="liRight">
+                <span class="intername">{{$user->nickname}}</span>
+                {{--<span class="infor">厉害了</span>--}}
+                <span class="id" id="{{'user-'.$user->id}}"
+                      style="display: none">{{$user->id}}</span>
+              </div>
+            </li>
+          @endforeach
+
+
+        </ul>
+      </div>
+      <div class="conRight">
+        <div class="Righthead">
+          <div class="headName">赵鹏</div>
+          <div class="headId" style="display: none">0</div>
+
+          <div class="headConfig">
+            <ul>
+              <li><img src="qq/20170926103645_06.jpg"/></li>
+              <li><img src="qq/20170926103645_08.jpg"/></li>
+              <li><img src="qq/20170926103645_10.jpg"/></li>
+              <li><img src="qq/20170926103645_12.jpg"/></li>
+            </ul>
+          </div>
+        </div>
+        <div class="RightCont">
+          <ul class="newsList">
+
+          </ul>
+        </div>
+        <div class="RightFoot">
+          <div class="emjon">
+            <ul>
+              <li><img src="qq/em_02.jpg"/></li>
+              <li><img src="qq/em_05.jpg"/></li>
+              <li><img src="qq/em_07.jpg"/></li>
+              <li><img src="qq/em_12.jpg"/></li>
+              <li><img src="qq/em_14.jpg"/></li>
+              <li><img src="qq/em_16.jpg"/></li>
+              <li><img src="qq/em_20.jpg"/></li>
+              <li><img src="qq/em_23.jpg"/></li>
+              <li><img src="qq/em_25.jpg"/></li>
+              <li><img src="qq/em_30.jpg"/></li>
+              <li><img src="qq/em_31.jpg"/></li>
+              <li><img src="qq/em_33.jpg"/></li>
+              <li><img src="qq/em_37.jpg"/></li>
+              <li><img src="qq/em_38.jpg"/></li>
+              <li><img src="qq/em_40.jpg"/></li>
+              <li><img src="qq/em_45.jpg"/></li>
+              <li><img src="qq/em_47.jpg"/></li>
+              <li><img src="qq/em_48.jpg"/></li>
+              <li><img src="qq/em_52.jpg"/></li>
+              <li><img src="qq/em_54.jpg"/></li>
+              <li><img src="qq/em_55.jpg"/></li>
+            </ul>
+          </div>
+          <div class="footTop">
+            <ul>
+              <li><img src="qq/20170926103645_31.jpg"/></li>
+              <li class="ExP"><img src="qq/20170926103645_33.jpg"/></li>
+              <li><img src="qq/20170926103645_35.jpg"/></li>
+              <li><img src="qq/20170926103645_37.jpg"/></li>
+              <li><img src="qq/20170926103645_39.jpg"/></li>
+              <li><img src="qq/20170926103645_41.jpg" alt=""/></li>
+              <li><img src="qq/20170926103645_43.jpg"/></li>
+              <li><img src="qq/20170926103645_45.jpg"/></li>
+            </ul>
+          </div>
+          <div class="inputBox">
+            <textarea id="dope"
+                      style="background-color:#fafafa;resize:none;width: 100%;height: 89px; border: none;outline: none;"
+                      name=""
+                      rows="" cols=""></textarea>
+            <button class="sendBtn">发送(s)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>

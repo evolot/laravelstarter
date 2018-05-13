@@ -150,7 +150,8 @@ $.AdminBSB.leftSideBar = {
         }
     },
     isOpen: function () {
-        return $('body').hasClass('overlay-open');
+
+        // return $('body').hasClass('overlay-open');
     }
 };
 //==========================================================================================================================
@@ -182,7 +183,7 @@ $.AdminBSB.rightSideBar = {
         });
     },
     isOpen: function () {
-        return $('.right-sidebar').hasClass('open');
+        // return $('.right-sidebar').hasClass('open');
     }
 }
 //==========================================================================================================================

@@ -15,7 +15,7 @@ class UserController extends Controller {
    */
   public function index()
   {
-    $users = User::paginate(1)->toJson();
+    $users = User::with('roles')->paginate(1);
 
 
     return view('admin.users.index', compact('users'));

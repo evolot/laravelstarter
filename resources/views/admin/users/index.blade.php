@@ -20,17 +20,10 @@
                 <li class="dropdown">
                   <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
                      role="button" aria-haspopup="true" aria-expanded="false">
-                    <i class="material-icons">person_add</i>
+                    <i class="fa fa-user-plus"></i>
 
                   </a>
-                  <ul class="dropdown-menu pull-right">
-                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a>
-                    </li>
-                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another
-                        action</a></li>
-                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something
-                        else here</a></li>
-                  </ul>
+
                 </li>
               </ul>
             </div>
@@ -50,10 +43,47 @@
                       <th>姓名</th>
                       <th>邮箱</th>
                       <th>出生日期</th>
+                      <th>用户组</th>
+                      <th>操作</th>
                     </tr>
                     </thead>
+                    <tbody>
+                    @foreach($users as $user)
+                      <tr>
+                        <td>{{$user->id}}</td>
+                        <td>{{$user->nickname}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->created_at}}</td>
+                        <td>@foreach($user->roles as $role){{$role->display_name}}@endforeach</td>
+                        <td>
+                          <button class="btn btn-warning">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+
+                          </button>
+                          <button class="btn btn-danger">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                          </button>
+                        </td>
+
+
+                      </tr>
+                    @endforeach
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                      <th>编号</th>
+                      <th>姓名</th>
+                      <th>邮箱</th>
+                      <th>出生日期</th>
+                      <th>用户组</th>
+                      <th>操作</th>
+
+                    </tr>
+
+                    </tfoot>
 
                   </table>
+                  {{$users->links()}}
 
 
 
@@ -75,38 +105,38 @@
 @endsection
 @section('js')
 
-  <script src="https://cdn.bootcss.com/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.bootcss.com/jszip/3.1.5/jszip.min.js"></script>
-  <script src="{{asset('/js/admin/plugins/jquery-datatables/buttons.html5.min.js')}}"></script>
-  <script src="{{asset('/js/admin/plugins/jquery-datatables/buttons.print.min.js')}}"></script>
-  <script src="{{asset('/js/admin/plugins/jquery-datatables/dataTables.buttons.min.js')}}"></script>
-  <script src="{{asset('/js/admin/plugins/jquery-datatables/pdfmake.min.js')}}"></script>
+  {{--<script src="https://cdn.bootcss.com/datatables/1.10.12/js/jquery.dataTables.min.js"></script>--}}
+  {{--<script src="https://cdn.bootcss.com/jszip/3.1.5/jszip.min.js"></script>--}}
+  {{--<script src="{{asset('/js/admin/plugins/jquery-datatables/buttons.html5.min.js')}}"></script>--}}
+  {{--<script src="{{asset('/js/admin/plugins/jquery-datatables/buttons.print.min.js')}}"></script>--}}
+  {{--<script src="{{asset('/js/admin/plugins/jquery-datatables/dataTables.buttons.min.js')}}"></script>--}}
+  {{--<script src="{{asset('/js/admin/plugins/jquery-datatables/pdfmake.min.js')}}"></script>--}}
 
-  <script>
-      $(function () {
+  {{--<script>--}}
+  {{--$(function () {--}}
 
 
-          var data = {!! $users !!}
-          console.log(data.data)
+  {{--var data = {!! $users !!}--}}
+  {{--console.log(data.data)--}}
 
-          //Exportable table
-          $('.js-exportable').DataTable({
-              dom: 'Bfrtip',
-              data: data.data,
-              responsive: true,
-              buttons: [
-                  'excel', 'print', 'pdf'
-              ],
-              paging: false,
-              columns: [
-                  {data: 'id'},
-                  {data: 'name'},
-                  {data: 'email'},
-                  {data: 'created_at'},
-              ]
-          });
-      });
-  </script>
+  {{--//Exportable table--}}
+  {{--$('.js-exportable').DataTable({--}}
+  {{--// dom: 'Bfrtip',--}}
+  {{--// // data: data.data,--}}
+  {{--responsive: true,--}}
+  {{--buttons: [--}}
+  {{--'excel', 'print', 'pdf'--}}
+  {{--],--}}
+  {{--paging: false,--}}
+  {{--// columns: [--}}
+  {{--//     {data: 'id'},--}}
+  {{--//     {data: 'name'},--}}
+  {{--//     {data: 'email'},--}}
+  {{--//     {data: 'created_at'},--}}
+  {{--// ]--}}
+  {{--});--}}
+  {{--});--}}
+  {{--</script>--}}
 
   <script>
       function dele(id) {

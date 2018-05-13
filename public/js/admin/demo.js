@@ -9,7 +9,12 @@ $(function () {
         setSettingListHeightAndScroll(false);
     });
 });
-
+$(
+    $('#contacts li').on('click', function () {
+        $('.qqBox').show()
+        $('')
+    })
+);
 //Skin changer
 function skinChanger() {
     $('.right-sidebar .demo-choose-skin li').on('click', function () {
