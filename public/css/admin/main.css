@@ -7412,7 +7412,8 @@ fieldset[disabled] .form-control {
     -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     -ms-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 11 !important; }
+    z-index: 9 !important;
+}
 .sidebar .legal {
     position: absolute;
     bottom: 0;
@@ -7591,10 +7592,10 @@ fieldset[disabled] .form-control {
     padding-left: 95px; }
 
 .right-sidebar {
-    width: 350px;
+    width: 266px;
     height: calc(100vh - 70px);
     position: fixed;
-    right: -350px;
+    right: -266px;
     top: 70px;
     background: #fdfdfd;
     z-index: 11 !important;
@@ -7995,14 +7996,14 @@ html.ie11 .bs-searchbox .form-control {
     height: 600px;
     position: fixed;
     border: 1px solid #ccc;
-    top: 0;
+    top: -112px;
     bottom: 0;
-    left: 0;
+    left: -67px;
     right: 0;
     margin: auto;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    z-index: 5;
+    z-index: 15;
 }
 
 .BoxHead {
@@ -8090,6 +8091,7 @@ html.ie11 .bs-searchbox .form-control {
     -webkit-box-flex: 1;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+    height: 546px;
 }
 
 .Righthead {
@@ -8306,4 +8308,12 @@ html.ie11 .bs-searchbox .form-control {
 .right-sidebar .conLeft {
     width: 350px;
     height: 100%;
+}
+
+.qqboxclose {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
 }

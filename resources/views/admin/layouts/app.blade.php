@@ -199,6 +199,172 @@
           });
 
 
+      //message
+
+      //点击联系人切换聊天窗口
+      $('.conLeft').on('click', 'li', function () {
+          //选定联系人 改变联系人列表背景色 未读消息数量 置零
+          console.log('1')
+
+          $(this).addClass('bg').siblings().removeClass('bg');
+          $(this).children('.badge').text('0');
+          $(this).children('.badge').css('display', 'none');
+
+          //改变对话框联系人 名称 头像
+          var intername = $(this).children('.liRight').children('.intername').text();
+          var id = $(this).children('.liRight').children('.id').text();
+          $('.headName').text(intername);
+          $('.headId').text(id);
+
+
+          $(".newsList").html('');
+          console.log($(".newsList").html())
+
+          //读取聊天记录并渲染
+
+          const myid =
+        {{Auth::id()}}
+
+
+        if (myid < id) {
+            var largeId = id
+            var smallId = myid
+        } else {
+            var largeId = myid
+            var smallId = id
+        }
+
+          var group = smallId + ':' + largeId
+
+          console.log(group)
+
+          if (localStorage[group]) {
+              var localContent = JSON.parse(localStorage[group]);
+          } else {
+              // console.log(localContent)
+          }
+
+
+          $(localContent).each(function (key, obj) {
+
+              var domstring = renderRecords(obj);//获取对应的聊天模板
+              $(".newsList").append(domstring);//展示聊天信息
+
+          });
+
+
+          $('.RightCont').scrollTop($('.RightCont')[0].scrollHeight);
+
+      })
+
+
+      //渲染聊天记录
+      function renderRecords(obj) {
+          const myavatar = $('#headImg').attr('src')
+          const companyavatar = $('.bg').find('img').attr('src')
+          if (obj.self == 0) {
+              let answer = '';
+              answer += '<li>' +
+                  '<div class="answerHead"><img src="' + companyavatar + '"/></div>' +
+                  '<div class="answers">' + obj.data + '</div>' +
+                  '</li>';
+              return answer;
+          } else {
+              var str = '';
+              str += '<li>' +
+                  '<div class="nesHead"><img src=' + myavatar + '/></div>' +
+                  '<div class="news">' + obj.data + '</div>' +
+                  '</li>';
+              return str
+          }
+      }
+
+      //发送消息
+      $('.sendBtn').click(function () {
+
+          let news = $('#dope').val().trim();
+          if (news == '') return;
+          let id = $('.headId').text();
+
+          const myid =
+            {{Auth::id()}}
+
+          const companyid = $('.headId').text()
+          if (myid < companyid) {
+              var largeId = companyid
+              var smallId = myid
+          } else {
+              var largeId = myid
+              var smallId = companyid
+          }
+
+          var group = smallId + ':' + largeId
+
+          var data = news
+
+          if (localStorage[group]) {
+              var localContent = JSON.parse(localStorage[group]);
+          } else {
+              var localContent = []
+          }
+
+
+          localContent.push({
+              'time': new Date().toLocaleString(),//时间
+              'data': data,//文本、emoji（符号）、图片（url）、文件(url)数据
+              'self': 1,//谁发的 自己发的1 收到的0
+
+
+          });
+          localStorage[group] = JSON.stringify(localContent);//存储本地；
+
+
+          console.log(news)
+
+          $.post("{{env('APP_ENV')=='local'?url('/message'):secure_url('/message')}}", {
+                  '_method': 'post',
+                  'id': id,
+                  'message': news
+              },
+              function (data) {
+                  let avatar = $('#headImg').attr('src')
+                  console.log(avatar)
+
+                  if (data.status == 1) {
+                      console.log(data)
+                      $('#dope').val('');
+
+                      var str = '';
+                      str += '<li>' +
+                          '<div class="nesHead"><img src="' + avatar + '"/></div>' +
+                          '<div class="news">' + news + '</div>' +
+                          '</li>';
+                      $('.newsList').append(str);
+                      $('.conLeft').find('li.bg').children('.liRight').children('.infor').text(news);
+                      $('.RightCont').scrollTop($('.RightCont')[0].scrollHeight);
+
+
+                  } else {
+                      console.log(data)
+                  }
+
+
+              });
+
+      })
+
+
+      $('.qqboxclose').on('click', function () {
+          $('.qqBox').hide()
+          $('.overlay').hide()
+      })
+
+      $('.qqshow').on('click', function () {
+          $('.qqBox').toggle()
+          $('.overlay').toggle()
+      })
+
+
     @endauth
   </script>
 @show

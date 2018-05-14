@@ -34,7 +34,7 @@
 
 
                   @else
-                    <form method="post" action="{{route('roles.store')}}">
+                    <form method="post" action="{{route('permissions.store')}}">
                       @endif
                       {{ csrf_field() }}
                       <label>名称</label>

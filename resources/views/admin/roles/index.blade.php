@@ -58,11 +58,15 @@
                         <td>{{$role->permissions_count}}</td>
                         <td>
                           <button class="btn btn-warning">
-                            <i class="material-icons">edit</i>
+                            <a href="{{route('roles.edit',$role->id)}}">
+                              <i class="material-icons">edit</i>
+                            </a>
 
                           </button>
                           <button class="btn btn-danger">
-                            <i class="material-icons">delete</i>
+                            <a href="{{route('roles.destroy',$role->id)}}">
+                              <i class="material-icons">delete</i>
+                            </a>
                           </button>
                         </td>
 

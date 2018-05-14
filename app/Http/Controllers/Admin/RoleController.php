@@ -75,9 +75,11 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+  public function update(Request $request, Role $role)
     {
-      dd($request);
+      $role->update($request->except(['_method', '_token']));
+
+      return redirect()->route('roles.index');
     }
 
     /**

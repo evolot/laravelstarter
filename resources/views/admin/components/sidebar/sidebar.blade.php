@@ -529,12 +529,14 @@
     </div>
   </aside>
   <!-- #END# Right Sidebar -->
-  <div class="qqBox" style="display: none">
+  <div class="qqBox" style="display:none">
     <div class="BoxHead">
       <div class="headImg">
         <img id="headImg" src="{{Auth::user()->avatar}}" style="height: 40px;width: 40px;"/>
       </div>
       <div class="internetName">{{Auth::user()->nickname}}</div>
+
+      <div class="qqboxclose"><i class="fa fa-window-close"></i></div>
     </div>
     <div class="context">
       <div class="conLeft">

@@ -14,23 +14,16 @@
           <div class="card">
             <div class="header">
               <h2>
-                用户列表
+                角色列表
               </h2>
               <ul class="header-dropdown m-r--5">
                 <li class="dropdown">
-                  <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                  <a href="{{route('permissions.create')}}"
                      role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="material-icons">person_add</i>
 
                   </a>
-                  <ul class="dropdown-menu pull-right">
-                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a>
-                    </li>
-                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another
-                        action</a></li>
-                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something
-                        else here</a></li>
-                  </ul>
+
                 </li>
               </ul>
             </div>
@@ -47,18 +40,36 @@
                     <thead>
                     <tr>
                       <th>编号</th>
-                      <th>姓名</th>
-                      <th>邮箱</th>
-                      <th>出生日期</th>
+                      <th>角色</th>
+                      <th>描述</th>
+                      <th>人数</th>
+                      <th>权限</th>
+                      <th>操作</th>
+
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($users as $user)
+                    @foreach($permissions as $permission)
                       <tr>
-                        <td>{{$user->id}}</td>
-                        <td>{{$user->nickname}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>{{$user->created_at}}</td>
+                        <td>{{$permission->id}}</td>
+                        <td>{{$permission->display_name}}</td>
+                        <td>{{$permission->description}}</td>
+                        <td>{{$permission->users_count}}</td>
+                        <td>{{$permission->permissions_count}}</td>
+                        <td>
+                          <button class="btn btn-warning">
+                            <a href="{{route('permissions.edit',$permission->id)}}">
+                              <i class="material-icons">edit</i>
+                            </a>
+
+                          </button>
+                          <button class="btn btn-danger">
+                            <a href="{{route('permissions.destroy',$permission->id)}}">
+                              <i class="material-icons">delete</i>
+                            </a>
+                          </button>
+                        </td>
+
 
                       </tr>
                     @endforeach
@@ -66,15 +77,18 @@
                     <tfoot>
                     <tr>
                       <th>编号</th>
-                      <th>姓名</th>
-                      <th>邮箱</th>
-                      <th>出生日期</th>
+                      <th>角色</th>
+                      <th>描述</th>
+                      <th>人数</th>
+                      <th>权限</th>
+                      <th>操作</th>
+
                     </tr>
 
                     </tfoot>
 
                   </table>
-                  {{$users->links()}}
+                  {{$permissions->links()}}
 
 
 

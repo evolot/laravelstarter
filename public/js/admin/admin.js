@@ -179,7 +179,7 @@ $.AdminBSB.rightSideBar = {
 
         $('.js-right-sidebar').on('click', function () {
             $sidebar.toggleClass('open');
-            if (_this.isOpen()) { $overlay.fadeIn(); } else { $overlay.fadeOut(); }
+            // if (_this.isOpen()) { $overlay.fadeIn(); } else { $overlay.fadeOut(); }
         });
     },
     isOpen: function () {

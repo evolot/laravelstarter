@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use App\Models\User;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\ServiceProvider;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -14,6 +16,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
       Schema::defaultStringLength(191);
+
+      $userlist = \Cache::get('userlist', function () {
+        $users = User::all();
+        \Cache::put('userlist', $users, 120);
+
+        return $users;
+      });
+      view()->share('users', $userlist);
     }
 
     /**

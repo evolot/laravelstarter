@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::resource('/users', 'Admin\UserController');
-
+Route::resource('/message', 'Home\MessageController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'role:admin']], function () {
   Route::get('/', 'AdminController@index');
